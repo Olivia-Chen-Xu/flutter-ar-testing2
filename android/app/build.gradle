@@ -72,8 +72,8 @@ dependencies {
 apply plugin : 'com.google.ar.sceneform.plugin'
 
 sceneform.asset(
-    'sampledata/Toon_Gator_Complete.obj',
+    'sampledata/checkmark.obj',
     'default',
-    'sampledata/Toon_Gator_Complete.sfa',
-    'src/main/assets/Toon'
+    'sampledata/checkmark.sfa',
+    'src/main/assets/Checkmark'
 )
