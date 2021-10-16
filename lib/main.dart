@@ -39,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   _onArCoreViewCreated(ArCoreController controller) {
     arCoreController = controller;
     _addToon(arCoreController);
+    _addSphere(arCoreController);
     //arCoreController.onPlaneDetected = _handleOnPlaneDetected;
   }
 
@@ -53,21 +54,18 @@ class _MyHomePageState extends State<MyHomePage> {
     final node = ArCoreReferenceNode(
       name: 'Checkmark',
       obcject3DFileName: 'Checkmark.sfb',
-      scale: vector.Vector3(0.5, 0.5, 0.5),
+      scale: vector.Vector3(0.1, 0.1, 0.1),
       position: vector.Vector3(0, -1, -1),
       rotation: vector.Vector4(0, 180, 0, 0),
     );
     controller.addArCoreNode(node);
   }
 
-  _addSphere(ArCoreController controller, ArCorePlane plane) {
+  _addSphere(ArCoreController controller) {
     final material = ArCoreMaterial(color: Colors.red);
     final sphere = ArCoreSphere(materials: [material], radius: 0.2);
     node = ArCoreNode(
-        name: 'Sphere',
-        shape: sphere,
-        position: plane.centerPose.translation,
-        rotation: plane.centerPose.rotation);
+        name: 'Sphere', shape: sphere, position: vector.Vector3(0, -1, -1));
     controller.addArCoreNode(node);
   }
 
