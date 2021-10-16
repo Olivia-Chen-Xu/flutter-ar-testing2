@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
     name: 'Checkmark',
     obcject3DFileName: 'Checkmark.sfb',
     scale: vector.Vector3(0.1, 0.1, 0.1),
-    position: vector.Vector3(5, -1, -1),
+    position: vector.Vector3(0, -1, -1),
     rotation: vector.Vector4(0, 180, 0, 0),
   );
 
@@ -66,16 +66,16 @@ class _MyHomePageState extends State<MyHomePage> {
     controller.addArCoreNode(node);
   }
 
-  removeNodes() {
-    arCoreController.removeNode(nodeName: 'node1');
-    arCoreController.removeNode(nodeName: 'node2');
+  removeNodes(ArCoreController controller) {
+    controller.removeNode(nodeName: 'node1');
+    controller.removeNode(nodeName: 'node2');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
-        onTap: removeNodes,
+        onTap: () => removeNodes,
         child: ArCoreView(
           onArCoreViewCreated: _onArCoreViewCreated,
           enableUpdateListener: true,
