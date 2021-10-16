@@ -29,7 +29,19 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   ArCoreController arCoreController;
-  ArCoreNode node;
+  ArCoreNode node1 = ArCoreReferenceNode(
+    name: 'Checkmark',
+    obcject3DFileName: 'Checkmark.sfb',
+    scale: vector.Vector3(0.1, 0.1, 0.1),
+    position: vector.Vector3(5, -1, -1),
+    rotation: vector.Vector4(0, 180, 0, 0),
+  );
+
+  ArCoreNode node2 = ArCoreNode(
+      name: 'Sphere',
+      shape: ArCoreSphere(
+          materials: [ArCoreMaterial(color: Colors.red)], radius: 0.2),
+      position: vector.Vector3(0, -1, -1));
 
   void dipsose() {
     super.dispose();
@@ -38,8 +50,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _onArCoreViewCreated(ArCoreController controller) {
     arCoreController = controller;
-    _addToon(arCoreController);
-    _addSphere(arCoreController);
+    _addNode(arCoreController, node1);
+    _addNode(arCoreController, node2);
     //arCoreController.onPlaneDetected = _handleOnPlaneDetected;
   }
 
@@ -50,31 +62,24 @@ class _MyHomePageState extends State<MyHomePage> {
   _addToon(arCoreController, plane);
 }*/
 
-  _addToon(ArCoreController controller) {
-    final node = ArCoreReferenceNode(
-      name: 'Checkmark',
-      obcject3DFileName: 'Checkmark.sfb',
-      scale: vector.Vector3(0.1, 0.1, 0.1),
-      position: vector.Vector3(0, -1, -1),
-      rotation: vector.Vector4(0, 180, 0, 0),
-    );
+  _addNode(ArCoreController controller, ArCoreNode node) {
     controller.addArCoreNode(node);
   }
 
-  _addSphere(ArCoreController controller) {
-    final material = ArCoreMaterial(color: Colors.red);
-    final sphere = ArCoreSphere(materials: [material], radius: 0.2);
-    node = ArCoreNode(
-        name: 'Sphere', shape: sphere, position: vector.Vector3(0, -1, -1));
-    controller.addArCoreNode(node);
+  removeNodes() {
+    arCoreController.removeNode(nodeName: 'node1');
+    arCoreController.removeNode(nodeName: 'node2');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ArCoreView(
-        onArCoreViewCreated: _onArCoreViewCreated,
-        enableUpdateListener: true,
+      body: GestureDetector(
+        onTap: removeNodes,
+        child: ArCoreView(
+          onArCoreViewCreated: _onArCoreViewCreated,
+          enableUpdateListener: true,
+        ),
       ),
     );
   }
