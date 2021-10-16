@@ -72,8 +72,8 @@ dependencies {
 apply plugin : 'com.google.ar.sceneform.plugin'
 
 sceneform.asset(
-    'sampledata/checkmark.obj',
+    'sampledata/Good-Test-Case.obj',
     'default',
-    'sampledata/checkmark.sfa',
-    'src/main/assets/Checkmark'
+    'sampledata/Good-Test-Case.sfa',
+    'src/main/assets/GoodTestCase'
 )

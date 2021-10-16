@@ -30,8 +30,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   ArCoreController arCoreController;
   ArCoreNode node1 = ArCoreReferenceNode(
-    name: 'Checkmark',
-    obcject3DFileName: 'Checkmark.sfb',
+    name: 'GoodTestCase',
+    obcject3DFileName: 'GoodTestCase.sfb',
     scale: vector.Vector3(0.1, 0.1, 0.1),
     position: vector.Vector3(0, -1, -1),
     rotation: vector.Vector4(0, 180, 0, 0),
