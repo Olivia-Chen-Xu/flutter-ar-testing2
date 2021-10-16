@@ -67,8 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   removeNodes() {
-    arCoreController.removeNode(nodeName: 'node1');
-    arCoreController.removeNode(nodeName: 'node2');
+    arCoreController.removeNode(nodeName: node1.name);
+    arCoreController.removeNode(nodeName: node2.name);
   }
 
   @override
