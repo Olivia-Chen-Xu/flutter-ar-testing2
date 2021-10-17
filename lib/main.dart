@@ -106,9 +106,9 @@ class _MyHomePageState extends State<MyHomePage> {
         enableTapRecognizer: true,
         enableUpdateListener: true,
       ),
-      Center(
-        child: Positioned(
-            bottom: 10,
+      Positioned(
+          bottom: 10,
+          child: Center(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -165,8 +165,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 )
               ],
-            )),
-      )
+            ),
+          )),
     ]));
   }
 }
