@@ -29,7 +29,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   ArCoreController arCoreController;
-  
+
   ArCoreNode node1 = ArCoreReferenceNode(
     name: 'GoodCard',
     obcject3DFileName: 'GoodCard.sfb',
@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
     position: vector.Vector3(-1, -1, -1.5),
     rotation: vector.Vector4(0, 0, 0, 0),
   );
-  
+
   ArCoreNode node3 = ArCoreReferenceNode(
     name: 'goodEnvCard',
     obcject3DFileName: 'goodEnvCard.sfb',
@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
     position: vector.Vector3(0, -1, -1.5),
     rotation: vector.Vector4(0, 0, 0, 0),
   );
-  
+
   ArCoreNode node4 = ArCoreReferenceNode(
     name: 'badEnvCard',
     obcject3DFileName: 'badEnvCard.sfb',
@@ -61,7 +61,6 @@ class _MyHomePageState extends State<MyHomePage> {
     position: vector.Vector3(-1, -1, -1.5),
     rotation: vector.Vector4(0, 0, 0, 0),
   );
-
 
   void dipsose() {
     super.dispose();
@@ -98,24 +97,41 @@ class _MyHomePageState extends State<MyHomePage> {
     controller.addArCoreNode(node);
   }
 
-  removeNodes() {
-    arCoreController.removeNode(nodeName: node1.name);
-    arCoreController.removeNode(nodeName: node2.name);
-    arCoreController.removeNode(nodeName: node3.name);
-    arCoreController.removeNode(nodeName: node4.name);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GestureDetector(
-        onTap: () => removeNodes,
-        child: ArCoreView(
-          onArCoreViewCreated: _onArCoreViewCreated,
-          enableTapRecognizer: true,
-          enableUpdateListener: true,
-        ),
+        body: Stack(children: <Widget>[
+      ArCoreView(
+        onArCoreViewCreated: _onArCoreViewCreated,
+        enableTapRecognizer: true,
+        enableUpdateListener: true,
       ),
-    );
+      Row(
+        children: [
+          Column(children: [
+            Text('Nivea Toner'),
+            FloatingActionButton.extended(
+              onPressed: () {
+                // Add onPressed function
+              },
+              label: const Text('Add to Cart'),
+              icon: const Icon(Icons.thumb_up),
+              backgroundColor: Colors.pink,
+            ),
+          ]),
+          Column(children: [
+            Text('Glysomed Hand Cream'),
+            FloatingActionButton.extended(
+              onPressed: () {
+                // Add onPressed function
+              },
+              label: const Text('Add to Cart'),
+              icon: const Icon(Icons.thumb_up),
+              backgroundColor: Colors.pink,
+            ),
+          ]),
+        ],
+      )
+    ]));
   }
 }
