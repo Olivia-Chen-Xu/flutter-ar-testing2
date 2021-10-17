@@ -106,59 +106,67 @@ class _MyHomePageState extends State<MyHomePage> {
         enableTapRecognizer: true,
         enableUpdateListener: true,
       ),
-      Positioned(
-          bottom: 10,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(children: [
-                    Text('Nivea Toner',
-                        style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold)),
-                    SizedBox(
-                      height: 25,
-                      width: 150,
-                      child: FloatingActionButton.extended(
-                        onPressed: () {
-                          // Add onPressed function
-                        },
-                        label: const Text('Add to Cart',
-                            style: TextStyle(fontSize: 10)),
-                        icon: const Icon(Icons.thumb_up),
-                        backgroundColor: Colors.pink,
+      Center(
+        child: Positioned(
+            bottom: 10,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('Nivea Toner',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold)),
                       ),
-                    )
-                  ]),
+                      SizedBox(
+                        height: 25,
+                        width: 150,
+                        child: FloatingActionButton.extended(
+                          onPressed: () {
+                            // Add onPressed function
+                          },
+                          label: const Text('Add to Cart',
+                              style: TextStyle(fontSize: 10)),
+                          icon: const Icon(Icons.thumb_up),
+                          backgroundColor: Colors.pink,
+                        ),
+                      )
+                    ]),
+                  ),
                 ),
-              ),
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(children: [
-                    Text('Glysomed Hand Cream',
-                        style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold)),
-                    SizedBox(
-                      height: 25,
-                      width: 150,
-                      child: FloatingActionButton.extended(
-                        onPressed: () {
-                          // Add onPressed function
-                        },
-                        label: const Text('Add to Cart',
-                            style: TextStyle(fontSize: 10)),
-                        icon: const Icon(Icons.thumb_up),
-                        backgroundColor: Colors.pink,
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('Glysomed Hand Cream',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold)),
                       ),
-                    )
-                  ]),
-                ),
-              )
-            ],
-          ))
+                      SizedBox(
+                        height: 25,
+                        width: 150,
+                        child: FloatingActionButton.extended(
+                          onPressed: () {
+                            // Add onPressed function
+                          },
+                          label: const Text('Add to Cart',
+                              style: TextStyle(fontSize: 10)),
+                          icon: const Icon(Icons.thumb_up),
+                          backgroundColor: Colors.pink,
+                        ),
+                      )
+                    ]),
+                  ),
+                )
+              ],
+            )),
+      )
     ]));
   }
 }
