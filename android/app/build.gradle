@@ -84,3 +84,17 @@ sceneform.asset(
     'sampledata/badCard.sfa',
     'src/main/assets/BadCard'
 )
+
+sceneform.asset(
+    'sampledata/goodEnvCard.obj',
+    'default',
+    'sampledata/goodEnvCard.sfa',
+    'src/main/assets/GoodEnvCard'
+)
+
+sceneform.asset(
+    'sampledata/badEnvCard.obj',
+    'default',
+    'sampledata/badEnvCard.sfa',
+    'src/main/assets/BadEnvCard'
+)
