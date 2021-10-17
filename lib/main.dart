@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       SizedBox(
                         height: 25,
-                        width: 150,
+                        width: 125,
                         child: FloatingActionButton.extended(
                           onPressed: () {
                             // Add onPressed function
@@ -150,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       SizedBox(
                         height: 25,
-                        width: 150,
+                        width: 125,
                         child: FloatingActionButton.extended(
                           onPressed: () {
                             // Add onPressed function
