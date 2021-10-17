@@ -115,15 +115,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(children: [
                   Text('Nivea Toner',
                       style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                   SizedBox(
-                    height: 25,
-                    width: 50,
+                    height: 30,
+                    width: 80,
                     child: FloatingActionButton.extended(
                       onPressed: () {
                         // Add onPressed function
                       },
-                      label: const Text('Add to Cart'),
+                      label: const Text('Add to Cart',
+                          style: TextStyle(fontSize: 10)),
                       icon: const Icon(Icons.thumb_up),
                       backgroundColor: Colors.pink,
                     ),
@@ -134,15 +135,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(children: [
                   Text('Glysomed Hand Cream',
                       style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                   SizedBox(
-                    height: 25,
-                    width: 50,
+                    height: 30,
+                    width: 80,
                     child: FloatingActionButton.extended(
                       onPressed: () {
                         // Add onPressed function
                       },
-                      label: const Text('Add to Cart'),
+                      label: const Text('Add to Cart',
+                          style: TextStyle(fontSize: 10)),
                       icon: const Icon(Icons.thumb_up),
                       backgroundColor: Colors.pink,
                     ),
