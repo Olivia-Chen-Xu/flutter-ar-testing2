@@ -131,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           },
                           label: const Text('Add to Cart',
                               style: TextStyle(fontSize: 10)),
-                          icon: const Icon(Icons.thumb_up),
+                          icon: const Icon(Icons.shopping_cart),
                           backgroundColor: Colors.pink,
                         ),
                       )
@@ -157,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           },
                           label: const Text('Add to Cart',
                               style: TextStyle(fontSize: 10)),
-                          icon: const Icon(Icons.thumb_up),
+                          icon: const Icon(Icons.shopping_cart),
                           backgroundColor: Colors.pink,
                         ),
                       )
