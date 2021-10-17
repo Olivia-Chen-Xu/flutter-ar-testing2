@@ -106,36 +106,51 @@ class _MyHomePageState extends State<MyHomePage> {
         enableTapRecognizer: true,
         enableUpdateListener: true,
       ),
-      Row(
-        children: [
-          Card(
-            child: Column(children: [
-              Text('Nivea Toner'),
-              FloatingActionButton.extended(
-                onPressed: () {
-                  // Add onPressed function
-                },
-                label: const Text('Add to Cart'),
-                icon: const Icon(Icons.thumb_up),
-                backgroundColor: Colors.pink,
+      Positioned(
+          bottom: 10,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Card(
+                child: Column(children: [
+                  Text('Nivea Toner',
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                  SizedBox(
+                    height: 25,
+                    width: 50,
+                    child: FloatingActionButton.extended(
+                      onPressed: () {
+                        // Add onPressed function
+                      },
+                      label: const Text('Add to Cart'),
+                      icon: const Icon(Icons.thumb_up),
+                      backgroundColor: Colors.pink,
+                    ),
+                  )
+                ]),
               ),
-            ]),
-          ),
-          Card(
-            child: Column(children: [
-              Text('Glysomed Hand Cream'),
-              FloatingActionButton.extended(
-                onPressed: () {
-                  // Add onPressed function
-                },
-                label: const Text('Add to Cart'),
-                icon: const Icon(Icons.thumb_up),
-                backgroundColor: Colors.pink,
-              ),
-            ]),
-          )
-        ],
-      )
+              Card(
+                child: Column(children: [
+                  Text('Glysomed Hand Cream',
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                  SizedBox(
+                    height: 25,
+                    width: 50,
+                    child: FloatingActionButton.extended(
+                      onPressed: () {
+                        // Add onPressed function
+                      },
+                      label: const Text('Add to Cart'),
+                      icon: const Icon(Icons.thumb_up),
+                      backgroundColor: Colors.pink,
+                    ),
+                  )
+                ]),
+              )
+            ],
+          ))
     ]));
   }
 }
