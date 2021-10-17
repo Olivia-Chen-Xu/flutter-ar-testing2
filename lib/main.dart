@@ -108,28 +108,32 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       Row(
         children: [
-          Column(children: [
-            Text('Nivea Toner'),
-            FloatingActionButton.extended(
-              onPressed: () {
-                // Add onPressed function
-              },
-              label: const Text('Add to Cart'),
-              icon: const Icon(Icons.thumb_up),
-              backgroundColor: Colors.pink,
-            ),
-          ]),
-          Column(children: [
-            Text('Glysomed Hand Cream'),
-            FloatingActionButton.extended(
-              onPressed: () {
-                // Add onPressed function
-              },
-              label: const Text('Add to Cart'),
-              icon: const Icon(Icons.thumb_up),
-              backgroundColor: Colors.pink,
-            ),
-          ]),
+          Card(
+            child: Column(children: [
+              Text('Nivea Toner'),
+              FloatingActionButton.extended(
+                onPressed: () {
+                  // Add onPressed function
+                },
+                label: const Text('Add to Cart'),
+                icon: const Icon(Icons.thumb_up),
+                backgroundColor: Colors.pink,
+              ),
+            ]),
+          ),
+          Card(
+            child: Column(children: [
+              Text('Glysomed Hand Cream'),
+              FloatingActionButton.extended(
+                onPressed: () {
+                  // Add onPressed function
+                },
+                label: const Text('Add to Cart'),
+                icon: const Icon(Icons.thumb_up),
+                backgroundColor: Colors.pink,
+              ),
+            ]),
+          )
         ],
       )
     ]));
