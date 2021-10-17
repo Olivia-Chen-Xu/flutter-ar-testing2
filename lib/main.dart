@@ -30,18 +30,20 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   ArCoreController arCoreController;
   ArCoreNode node1 = ArCoreReferenceNode(
-    name: 'GoodTestCase',
-    obcject3DFileName: 'GoodTestCase.sfb',
-    scale: vector.Vector3(0.1, 0.1, 0.1),
-    position: vector.Vector3(0, -1, -1),
-    rotation: vector.Vector4(0, 180, 0, 0),
+    name: 'GoodCard',
+    obcject3DFileName: 'GoodCard.sfb',
+    scale: vector.Vector3(.5, .5, .5),
+    position: vector.Vector3(0, -1, -1.5),
+    rotation: vector.Vector4(0, 0, 0, 0),
   );
 
-  ArCoreNode node2 = ArCoreNode(
-      name: 'Sphere',
-      shape: ArCoreSphere(
-          materials: [ArCoreMaterial(color: Colors.red)], radius: 0.2),
-      position: vector.Vector3(0, -1, -1));
+  ArCoreNode node2 = ArCoreReferenceNode(
+    name: 'BadCard',
+    obcject3DFileName: 'BadCard.sfb',
+    scale: vector.Vector3(.5, .5, .5),
+    position: vector.Vector3(-0.7, -1, -1.5),
+    rotation: vector.Vector4(0, 0, 0, 0),
+  );
 
   void dipsose() {
     super.dispose();
@@ -50,10 +52,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _onArCoreViewCreated(ArCoreController controller) {
     arCoreController = controller;
+    //arCoreController.onNodeTap = (node1) => onTapHandler(node1);
+    //arCoreController.onPlaneTap = _onPlaneTapHandler;
     _addNode(arCoreController, node1);
     _addNode(arCoreController, node2);
     //arCoreController.onPlaneDetected = _handleOnPlaneDetected;
   }
+
+  // onTapHandler(String name) {
+  //   showDialog<void>(
+  //     context: context,
+  //     builder: (BuildContext context) =>
+  //       AlertDialog(content: Text('onNodeTap on $name')),
+  //   );
+  // }
 
 /*_handleOnPlaneDetected(ArCorePlane plane){
   if(node!=null){
@@ -78,6 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onTap: () => removeNodes,
         child: ArCoreView(
           onArCoreViewCreated: _onArCoreViewCreated,
+          enableTapRecognizer: true,
           enableUpdateListener: true,
         ),
       ),

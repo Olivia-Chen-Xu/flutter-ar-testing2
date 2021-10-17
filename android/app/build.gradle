@@ -72,8 +72,15 @@ dependencies {
 apply plugin : 'com.google.ar.sceneform.plugin'
 
 sceneform.asset(
-    'sampledata/goodtestcase.obj',
+    'sampledata/goodCard.obj',
     'default',
-    'sampledata/goodtestcase.sfa',
-    'src/main/assets/GoodTestCase'
+    'sampledata/goodCard.sfa',
+    'src/main/assets/GoodCard'
+)
+
+sceneform.asset(
+    'sampledata/badCard.obj',
+    'default',
+    'sampledata/badCard.sfa',
+    'src/main/assets/BadCard'
 )
